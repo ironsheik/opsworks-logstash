@@ -3,6 +3,18 @@
 instances = node[:opsworks][:layers][:rabbitmq][:instances]
 
 instances.each do |name, attrs|
+  log "logging name:" do
+    level :debug
+  end
+  log name do
+    level :debug
+  end
+  log "logging private ip:" do
+    level :debug
+  end
+  log attrs['private_ip'] do
+    level :debug
+  end
   hostsfile_entry attrs['private_ip'] do
     hostname  name
     unique    true
