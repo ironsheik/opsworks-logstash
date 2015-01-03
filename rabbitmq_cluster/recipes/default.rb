@@ -1,3 +1,4 @@
+#test
 # Add all rabbitmq nodes to the hosts file with their short name.
 instances = node[:opsworks][:layers][:rabbitmq][:instances]
 
